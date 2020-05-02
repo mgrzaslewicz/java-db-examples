@@ -1,0 +1,1 @@
+Example of problems and solutions related to handling DB operations in java
