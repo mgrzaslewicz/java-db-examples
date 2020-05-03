@@ -13,7 +13,7 @@ import java.util.Properties;
 
 public class TestDb {
 
-    private static PostgreSQLContainer getContainer() {
+    private static PostgreSQLContainer getPostgreSqlContainer() {
         var dbPassword = "dbPpassword123";
         var dbUser = "dbUser123";
         var database = new PostgreSQLContainer("postgres:11.0");
@@ -25,8 +25,8 @@ public class TestDb {
         return database;
     }
 
-    public static Connection getConnection() throws SQLException {
-        var postgreDb = getContainer();
+    public static Connection getPostgreSqlConnection() throws SQLException {
+        var postgreDb = getPostgreSqlContainer();
         Properties connectionProps = new Properties();
         connectionProps.put("user", postgreDb.getUsername());
         connectionProps.put("password", postgreDb.getPassword());
@@ -35,8 +35,8 @@ public class TestDb {
     }
 
 
-    public static DataSource getDataSourceWithConnectionPool() {
-        var postgreDb = getContainer();
+    public static DataSource getPostgreSqlDataSourceWithConnectionPool() {
+        var postgreDb = getPostgreSqlContainer();
 
         var config = new HikariConfig();
         config.setJdbcUrl(postgreDb.getJdbcUrl());

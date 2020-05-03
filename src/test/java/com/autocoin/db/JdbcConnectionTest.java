@@ -15,7 +15,7 @@ public class JdbcConnectionTest {
     @Test
     public void shouldCreateSingleConnection() throws SQLException {
         // given
-        var connection = TestDb.getConnection();
+        var connection = TestDb.getPostgreSqlConnection();
         var userAccountService = new UserAccountService();
         // when
         var userAccounts = userAccountService.findAllByFirstName(connection, "John");
@@ -27,7 +27,7 @@ public class JdbcConnectionTest {
     @Test
     public void shouldCreateHikariConnectionPool() throws SQLException {
         // given
-        var dataSource = TestDb.getDataSourceWithConnectionPool();
+        var dataSource = TestDb.getPostgreSqlDataSourceWithConnectionPool();
         var userAccountService = new UserAccountService();
         // when
         var userAccounts = userAccountService.findAllByFirstName(dataSource.getConnection(), "John");
