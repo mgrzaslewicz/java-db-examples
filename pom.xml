@@ -12,7 +12,7 @@
     <properties>
         <java.version>13</java.version>
         <junit.version>5.5.1</junit.version>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.2.13</logback.version>
         <jdbi.version>3.12.0</jdbi.version>
     </properties>
 
